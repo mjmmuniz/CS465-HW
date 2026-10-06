@@ -22,3 +22,29 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
 
 **/
+
+const twoSum = function getTargetofNums(nums, target) {
+  for (let i = 0; i < nums.length; ++i) {
+    if (nums[i] < target) {
+      for (let j = i + 1; j < nums.length; ++j) {
+        if (nums[i] + nums[j] === target) {
+          return [i, j];
+        }
+      }
+    }
+  }
+  return [-1, -1];
+};
+
+console.log(
+  "Input: nums = [2,7,11,15], target = 9\nOutput:\n",
+  twoSum([2, 7, 11, 15], 9),
+);
+console.log(
+  "\nInput: nums = [3,2,4], target = 6\nOutput:\n",
+  twoSum([3, 2, 4], 6),
+);
+console.log(
+  "\nInput: Input: nums = [3,3], target = 6\nOutput:\n",
+  twoSum([3, 3], 6),
+);
