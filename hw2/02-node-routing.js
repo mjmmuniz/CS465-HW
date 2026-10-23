@@ -21,9 +21,42 @@ const server = http.createServer((req, res) => {
     'other',
   ];
 
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('Node Routing Exercise');
+  if (req.url === '/') {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.write('<h1>Node Routing Exercise</h1>');
+    res.end();
+  }
+  else if (req.url === '/welcome') {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.write('<h1>Welcome to my homework!</h1>');
+    res.end();
+  }
+  else if (req.url === '/redirect') {
+    res.writeHead(302, { 'Location': '/redirected' });
+    res.end();
+  }
+  else if (req.url === '/redirected') {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.write('<h1>You were redirected!</h1>');
+    res.end();
+  }
+  else if (req.url === '/cache') {
+    res.writeHead(200, { 'Content-Type': 'text/html',
+                        'Cache-Control': 'max-age=86400'});
+    res.write('<h1>this resource was cached</h1>');
+    res.end();
+  }
+  else if (req.url === '/cookie') {
+    res.writeHead(200, { 'Content-Type': 'text/plain',
+                        'Set-Cookie': 'hello=world'});
+    res.write('cookies... yummm');
+    res.end();
+  }
+  else {
+  res.writeHead(404, { 'Content-Type': 'text/html' });
+  res.write('<h1>404: Page not found</h1>');
   res.end();
+  }
 });
 
 server.listen(port, () => {
