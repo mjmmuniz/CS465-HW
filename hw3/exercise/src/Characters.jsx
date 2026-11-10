@@ -8,10 +8,10 @@ function CharCard({char}) {
     return (
         <li className='character-card'>
             <div className='img-container'>
-                {!isLoaded && (<span className='img-loading'></span>)}
+                {!isLoaded && <span>Loading...</span>}
                 <img 
                     src={char.image} 
-                    alt={`image of ${char.name}`} 
+                    alt={`${char.name} chararcter`} 
                     loading="lazy"
                     onError={(e) => {
                         setTimeout(() => {
@@ -19,7 +19,6 @@ function CharCard({char}) {
                         }, 2000);
                     }}
                     onLoad={() => setIsLoaded(true)}
-                    className={`character-img ${isLoaded ? 'loaded' : ''}`}
                 /> 
             </div>
             Name: {char.name} <br />
@@ -36,7 +35,7 @@ export default function Characters() {
     return (
         <div>
         <h1>First 100 Rick and Morty Characters</h1>
-        <ul className="character-list">
+        <ul className='character-list'>
             {validChars.map((char) => (
                 <CharCard key={char.id} char={char} />
             ))}

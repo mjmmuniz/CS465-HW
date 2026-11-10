@@ -22,7 +22,15 @@
 }
 
 .img-loading {
+    width: 230px;
+    height: 230px;
     vertical-align: top; 
+}
+
+.img-error {
+    width: 230px;
+    height: 230px;
+    display: block;
 }
 
 .img-loaded {

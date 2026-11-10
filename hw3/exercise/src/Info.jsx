@@ -15,7 +15,7 @@ export function CharProvider({children}) {
 
                 setChars(allChars); 
             } catch (err) {
-                console.error("Error fetching characters: ", err);
+                console.error('Error fetching characters: ', err);
             }
         }
         fetchChars();

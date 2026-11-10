@@ -20,9 +20,9 @@ export default function Locations() {
         <h1>Rick and Morty Locations</h1>
         <ul>
             {Object.entries(locationGroups).map(([locations, data]) => (
-                <div key={locations}>
+                <li key={locations}>
                     <h2>{locations} ({data.count})</h2>
-                </div>
+                </li>
             ))}
         </ul>
         </div>
