@@ -1,0 +1,40 @@
+.character-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+}
+
+.character-card {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.img-container {
+    width: 230px;
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-loading {
+    width: 230px;
+    height: 230px;
+    vertical-align: top; 
+}
+
+.img-error {
+    width: 230px;
+    height: 230px;
+    display: block;
+}
+
+.img-loaded {
+    width: 230px;
+    height: 230px;
+    display: block;
+}
